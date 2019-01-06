@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.newer.dao.XunJiaMapper">
+  <resultMap id="xunjia_1" type="com.newer.domain.XunJia">
+    <id property="id" column="id"/>
+    <result property="zt" column="zt"/>
+    <result property="deltag" column="deltag"/>
+    <result property="gysid" column="gysid"/>
+    <result property="gysmc" column="gysmc"/>
+
+  </resultMap>
+
+  <resultMap id="xunjia_2" type="com.newer.domain.xjdmxb">
+    <id property="id" column="id"/>
+    <result property="xjdid" column="xjdid"/>
+    <result property="cp" column="cp"/>
+    <result property="clgg" column="clgg"/>
+    <result property="clxx" column="clxx"/>
+    <result property="clgg" column="clgg"/>
+    <result property="clxx" column="clxx"/>
+    <result property="ys" column="ys"/>
+    <result property="xirq" column="xirq"/>
+    <result property="clgg" column="clgg"/>
+    <result property="bu" column="bu"/>
+  </resultMap>
+  <select id="findxj" resultMap="xunjia_1">
+    select * from xjdb
+  </select>
+  <select id="findxb" resultMap="xunjia_2">
+    select * from xjdmxb where xjdid=#{id};
+  </select>
+
+</mapper>  

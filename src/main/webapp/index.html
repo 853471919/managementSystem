@@ -100,6 +100,7 @@ $(()=>{
 		dataType:"json",
 		success:function(data){
 			console.log(data.showuser)
+
 			if(!data.showuser){
 				location.href="login.html"
 			}else{
@@ -131,6 +132,8 @@ $(()=>{
 		}
 	})
 })
+
+
 
 
 /*用户修改密码*/
